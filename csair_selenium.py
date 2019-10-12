@@ -25,8 +25,8 @@ arrDate_to_list = [int(a) for a in arrDate_to_list]
 depCity = dates[4]
 arrCity = dates[5]
 
-depDate_from = date(depDate_from_list[0], depDate_from_list[1], depDate_from_list[2])
-depDate_to = date(depDate_to_list[0], depDate_to_list[1], depDate_to_list[2])
+depDate_from = date(*depDate_from_list)
+depDate_to = date(*depDate_to_list)
 
 delta = depDate_to - depDate_from
 depDates = []
@@ -34,8 +34,8 @@ for i in range(delta.days + 1):
     day = depDate_from + timedelta(days=i)
     depDates.append(str(day))
 
-arrDate_from = date(arrDate_from_list[0], arrDate_from_list[1], arrDate_from_list[2])
-arrDate_to   = date(arrDate_to_list[0], arrDate_to_list[1], arrDate_to_list[2])
+arrDate_from = date(*arrDate_from_list)
+arrDate_to   = date(*arrDate_to_list)
 
 delta = arrDate_to - arrDate_from
 arrDates = []
